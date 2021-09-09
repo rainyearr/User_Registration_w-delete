@@ -52,10 +52,10 @@ export default class CreateUser extends Component{
 
         console.log(`Form Submitted:`);
         console.log(`User Name: ${this.state.user_name}`);
-        console.log(`User Name: ${this.state.user_age}`);
-        console.log(`User Name: ${this.state.user_gender}`);
-        console.log(`User Name: ${this.state.user_email}`);
-        console.log(`User Name: ${this.state.user_phonenumber}`);
+        console.log(`User Age: ${this.state.user_age}`);
+        console.log(`User Gender: ${this.state.user_gender}`);
+        console.log(`User Email: ${this.state.user_email}`);
+        console.log(`User PhoneNumber: ${this.state.user_phonenumber}`);
 
         const newUser = {
             user_name : this.state.user_name,

@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const PORT = 4000;
-const todoRoutes = express.Router();
+const userRoutes = express.Router();
 let User = require('./user.model');
 
 app.use(cors());
@@ -64,4 +65,14 @@ userRoutes.route('/update/:id').post(function(req, res){
     })
 })
 
-userRoutes.route('/:id').post(function(req, res){})
+userRoutes.route('/:id').delete((req, res)=>{
+    User.findByIdAndDelete(req.params.id)
+        .then(()=> res.json('User Item Deleted.'))
+        .catch(err => res.status(400).json('Error:'+ err));
+});
+
+app.use('/users', userRoutes)
+
+app.listen(PORT, function(){
+    console.log("Server is running on port:" + PORT)
+})
