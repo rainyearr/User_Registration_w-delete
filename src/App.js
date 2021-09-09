@@ -6,6 +6,7 @@ import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 
 import CreateUser from './components/create-user.component';
 import UserList from './components/user-list.component';
+import EditUser from './components/edit-user.component';
 
 
 
@@ -29,6 +30,7 @@ class App extends Component {
             </nav>
             <Route path="/" exact component={UserList}/>
             <Route path="/create" component={CreateUser} />
+            <Route path="/edit/:id" component={EditUser} />
           </div>
       </Router>
     )
