@@ -1,8 +1,13 @@
 import React, {Component} from 'react';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import CreateUser from './components/create-user.component';
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+
+
+import CreateUser from './components/create-user.component';
+import UserList from './components/user-list.component';
+
+
 
 class App extends Component {
   render(){
@@ -22,6 +27,7 @@ class App extends Component {
                 </ul>
               </div>
             </nav>
+            <Route path="/" exact component={UserList}/>
             <Route path="/create" component={CreateUser} />
           </div>
       </Router>
