@@ -20,6 +20,7 @@ export default class CreateUser extends Component{
         this.onChangeGender = this.onChangeGender.bind(this);
         this.onChangeEmail = this.onChangeEmail.bind(this);
         this.onChangePhoneNumber = this.onChangePhoneNumber.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
     }
     onChangeUserName(e){
         this.setState({
@@ -50,7 +51,7 @@ export default class CreateUser extends Component{
     onSubmit(e){
         e.preventDefault();
 
-        console.log(`Form Submitted:`);
+        console.log(`Form submitted:`);
         console.log(`User Name: ${this.state.user_name}`);
         console.log(`User Age: ${this.state.user_age}`);
         console.log(`User Gender: ${this.state.user_gender}`);
@@ -65,7 +66,7 @@ export default class CreateUser extends Component{
             user_phonenumber : this.state.user_phonenumber,
         }
 
-        axios.post('http://localhost:4000/todos/add', newUser)
+        axios.post('http://localhost:4000/users/add', newUser)
         .then(res=> console.log(res.data));
 
         this.setState({

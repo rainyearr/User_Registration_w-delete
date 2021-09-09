@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const User = props => (
     <tr>
-        <td className={props.user.user_completed ? 'completed': ''}>{props.user_name}</td>
+        <td>{props.user_name}</td>
         <td className={props.user.user_completed ? 'completed': ''}>{props.user_age}</td>
         <td className={props.user.user_completed ? 'completed': ''}>{props.user_gender}</td>
         <td className={props.user.user_completed ? 'completed': ''}>{props.user_email}</td>
