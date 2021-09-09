@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import "../components/create-user.component.css";
 
-export class CreateUser extends Component{
+export default class CreateUser extends Component{
 
     constructor(props){
         super(props);
@@ -79,10 +80,57 @@ export class CreateUser extends Component{
     render(){
         return(
             <div style = {{marginTop: 10}}>
-                <h3>Create New Todo</h3>
-                <form onSubmit={this.onSubmit}></form>
-
-
+                <h3>Create New User</h3>
+                <form onSubmit={this.onSubmit}>
+                    <div >
+                        <label>User Name: </label>
+                        <input  
+                            type = "text"
+                            className = "form-control"
+                            value={this.state.user_name}
+                            onChange={this.onChangeUserName}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>Age: </label>
+                        <input  
+                            type = "text"
+                            className = "form-control"
+                            value={this.state.user_age}
+                            onChange={this.onChangeAge}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>Gender: </label>
+                        <input  
+                            type = "text"
+                            className = "form-control"
+                            value={this.state.user_gender}
+                            onChange={this.onChangeGender}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>Email: </label>
+                        <input  
+                            type = "text"
+                            className = "form-control"
+                            value={this.state.user_email}
+                            onChange={this.onChangeEmail}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>Phone Number: </label>
+                        <input  
+                            type = "text"
+                            className = "form-control"
+                            value={this.state.user_phonenumber}
+                            onChange={this.onChangePhoneNumber}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input type= "submit" value="Create User" className="btn btn-primary" />
+                    </div>
+                </form>
             </div>
         )
     }
