@@ -4,18 +4,18 @@ import axios from 'axios';
 
 const User = props => (
     <tr>
-        <td>{props.user_name}</td>
-        <td className={props.user.user_completed ? 'completed': ''}>{props.user_age}</td>
-        <td className={props.user.user_completed ? 'completed': ''}>{props.user_gender}</td>
-        <td className={props.user.user_completed ? 'completed': ''}>{props.user_email}</td>
-        <td className={props.user.user_completed ? 'completed': ''}>{props.user_phonenumber}</td>
+        <td className={props.user.user_completed ? 'completed': ''}>{props.user.user_name}</td>
+        <td className={props.user.user_completed ? 'completed': ''}>{props.user.user_age}</td>
+        <td className={props.user.user_completed ? 'completed': ''}>{props.user.user_gender}</td>
+        <td className={props.user.user_completed ? 'completed': ''}>{props.user.user_email}</td>
+        <td className={props.user.user_completed ? 'completed': ''}>{props.user.user_phonenumber}</td>
         <td>
             <Link to={"/edit/"+props.user._id}>Edit</Link> | <button onClick={()=> {props.deleteUserItem(props.user._id)}}>Delete</button>
         </td>
     </tr>
 )
 
-export default class UserList extends Component{
+export default class UsersList extends Component{
 
     constructor(props){
         super(props);

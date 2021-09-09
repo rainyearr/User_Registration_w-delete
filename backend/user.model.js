@@ -3,22 +3,22 @@ const Schema = mongoose.Schema;
 
 let User = new Schema({
     user_name: {
-        type: String
+        type: String,
     },
     user_age: {
-        type: String
+        type: String,
     },
     user_gender: {
-        type: String
+        type: String,
     },
     user_email: {
-        type: String
+        type: String,
     },
     user_phonenumber: {
-        type: String
+        type: String,
     },
     user_completed: {
-        type: Boolean
+        type: Boolean,
     }
 });
 

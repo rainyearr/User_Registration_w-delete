@@ -16,15 +16,6 @@ code {
     monospace;
 }
 
-h3, td {
-  color: #09d3ac;
-  /*
-  // light
-  color: #00ffff;
-  // dark
-  color:#09d3ac;
-   */
-}
 
 .table-striped tbody tr:nth-of-type(odd) , .bg-light{
  background-color: rgba(0,0,0,.2);
