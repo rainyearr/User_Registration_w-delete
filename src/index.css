@@ -16,13 +16,3 @@ code {
     monospace;
 }
 
-
-.table-striped tbody tr:nth-of-type(odd) , .bg-light{
- background-color: rgba(0,0,0,.2);
-}
-
-
-/* strike through the completed todos */
-.completed {
-  text-decoration: line-through;
-}

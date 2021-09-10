@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
+import "./user-list.component.css"
 
 const User = props => (
     <tr>
@@ -10,7 +11,14 @@ const User = props => (
         <td className={props.user.user_completed ? 'completed': ''}>{props.user.user_email}</td>
         <td className={props.user.user_completed ? 'completed': ''}>{props.user.user_phonenumber}</td>
         <td>
-            <Link to={"/edit/"+props.user._id}>Edit</Link> | <button onClick={()=> {props.deleteUserItem(props.user._id)}}>Delete</button>
+            <button className="update-button">
+                <Link style={{
+                color: "inherit",
+                textDecoration: "inherit",}}
+                to={"/edit/"+props.user._id}>Edit</Link>
+                </button>  
+                <button className="del-button" 
+                onClick={()=> {props.deleteUserItem(props.user._id)}}>Delete</button>
         </td>
     </tr>
 )
@@ -50,7 +58,7 @@ export default class UsersList extends Component{
 
     render(){
         return (
-            <div>
+            <div className="list-container">
                 <h3>User List</h3>
                 <table className="table table-striped" style={{marginTop:20}}>
                     <thead>

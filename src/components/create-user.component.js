@@ -77,15 +77,28 @@ export default class CreateUser extends Component{
             user_phonenumber: '',
         })
     }
+    renderGenderSelector(){
+        return(
+            <div>
+                <select onChange={(e)=> this.setState({user_gender: e.target.value})}>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Prefer not to say</option>
+                </select>
+            </div>
+        )
+    }
 
     render(){
         return(
             <div style = {{marginTop: 10}}>
                 <h3>Create New User</h3>
                 <form onSubmit={this.onSubmit}>
-                    <div >
-                        <label>User Name: </label>
+                    <div className="form-group">
+                        <label>Full Name: </label>
                         <input  
+                            required
+                            placeholder="Enter Full Name"
                             type = "text"
                             className = "form-control"
                             value={this.state.user_name}
@@ -95,6 +108,8 @@ export default class CreateUser extends Component{
                     <div className="form-group">
                         <label>Age: </label>
                         <input  
+                            required
+                            placeholder="Enter Age"
                             type = "text"
                             className = "form-control"
                             value={this.state.user_age}
@@ -103,16 +118,13 @@ export default class CreateUser extends Component{
                     </div>
                     <div className="form-group">
                         <label>Gender: </label>
-                        <input  
-                            type = "text"
-                            className = "form-control"
-                            value={this.state.user_gender}
-                            onChange={this.onChangeGender}
-                        />
+                        {this.renderGenderSelector()}
                     </div>
                     <div className="form-group">
-                        <label>Email: </label>
+                        <label>Email Address: </label>
                         <input  
+                            required
+                            placeholder="Enter Email Address"
                             type = "text"
                             className = "form-control"
                             value={this.state.user_email}
@@ -121,7 +133,9 @@ export default class CreateUser extends Component{
                     </div>
                     <div className="form-group">
                         <label>Phone Number: </label>
-                        <input  
+                        <input 
+                            required 
+                            placeholder="Enter Phone Number"
                             type = "text"
                             className = "form-control"
                             value={this.state.user_phonenumber}

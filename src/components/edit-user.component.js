@@ -90,10 +90,22 @@ export default class EditUser extends Component{
 
         this.props.history.push('/');
     }
+    renderGenderSelector(){
+        return(
+            <div>
+                <select value={this.state.user_gender}
+                onChange={this.onChangeUserGender}>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Prefer not to say</option>
+                </select>
+            </div>
+        )
+    }
     render(){
         return(
             <div>
-                <h3 align="center">Update User Information</h3>
+                <h3 style={{marginTop:20}}>Update User Information</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group"> 
                         <label>User Name: </label>
@@ -114,12 +126,7 @@ export default class EditUser extends Component{
                     </div>
                     <div className="form-group">
                         <label>Gender: </label>
-                        <input 
-                                type="text" 
-                                className="form-control"
-                                value={this.state.user_gender}
-                                onChange={this.onChangeUserGender}
-                                />
+                        {this.renderGenderSelector()}
                     </div>
                     <div className="form-group">
                         <label>Email: </label>
@@ -139,22 +146,7 @@ export default class EditUser extends Component{
                                 onChange={this.onChangeUserPhoneNumber}
                                 />
                     </div>
-                    <div className="form-check">
-                        <input  className="form-check-input"
-                                id="completedCheckbox"
-                                type="checkbox"
-                                name="completedCheckbox"
-                                onChange={this.onChangeUserCompleted}
-                                checked={this.state.user_completed}
-                                value={this.state.user_completed}
-                                />
-                        <label className="form-check-label" htmlFor="completedCheckbox">
-                            Completed
-                        </label>                        
-                    </div>
-
                     <br />
-
                     <div className="form-group">
                         <input type="submit" value="Update Todo" className="btn btn-primary" />
                     </div>
