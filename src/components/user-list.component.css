@@ -5,7 +5,8 @@
     cursor: pointer;
     color: blue;
     animation-duration: 0.1s;
-    border-radius: 5px;
+    border-color: blue;
+    border-radius: 10px;
     transition: 0.3s;
   }
 .del-button {
@@ -16,6 +17,8 @@
     margin-left: 2px;
     color: red;
     animation-duration: 0.1s;
-    border-radius: 5px;
+    border-color: red;
+    border-radius: 10px;
     transition: 0.3s;
 }
+
